@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DYNAMIC CONFIGURATION (All variables editable)
+   DYNAMIC CONFIGURATION (All original variables preserved)
    ========================================================================== */
 const CONFIG = {
     personal: {
@@ -14,10 +14,10 @@ const CONFIG = {
         aboutDesc: `<p class="mb-3">I am a CSE student at Southeast University (Graduating 2027) passionate about network infrastructure and modern web engineering. I focus on bridging hardware infrastructure with software logic to build scalable, secure, and reliable digital systems.</p>
         <p>With expertise in CCNA concepts, routing protocols, and full-stack development, I solve complex infrastructure challenges and engineer web applications. I am seeking opportunities as a Network Engineer, System Administrator, or Web Developer.</p>`,
         
-        profileImage: "suny.jpg", // Replace with your image URL
-        cvUrl: "CV.pdf", // Your CV PDF File path
+        profileImage: "suny.jpg",
+        cvUrl: "CV.pdf",
         stats: {
-            experience: "Fresher",
+            experience: "Fresher Graduate",
             completedProjects: "2+",
             happyClients: "5+"
         }
@@ -29,7 +29,6 @@ const CONFIG = {
         { icon: "fa-brands fa-facebook-f", link: "https://www.facebook.com/share/1CaBxrsPjv/" },
     ],
 
-    // Updated Education & Certifications (Matching exact structure of Image)
     educationAndCertifications: [
         {
             statusBadge: "Expected June 2027",
@@ -39,8 +38,15 @@ const CONFIG = {
             tags: ["Networking", "Web Development", "OSI/TCP-IP", "CCNA"]
         },
         {
+            statusBadge: "In Progress",
+            institution: "Cisco / Self-Paced Prep",
+            title: "Cisco Certified Network Associate (CCNA)",
+            description: "Gaining hands-on expertise in network routing, switching protocols, IP subnetting, and secure device access and administration.",
+            tags: ["Routing & Switching", "IP Subnetting", "Network Security", "TCP/IP Protocol"]
+        },
+        {
             statusBadge: "June 2023",
-            institution: "SIT Foundation BD",
+            institution: "sit foundation bd",
             title: "Diploma in Computer Science & ICT",
             description: "Completed comprehensive practical training in web development, computer operations, hardware fundamentals, and system maintenance.",
             tags: ["Practical Web Dev", "System Training", "ICT Fundamentals"]
@@ -51,13 +57,6 @@ const CONFIG = {
             title: "Professional Digital Marketing",
             description: "Acquired hands-on experience in Search Engine Optimization (SEO), digital content strategy, and online brand management and positioning.",
             tags: ["SEO", "Content Strategy", "Digital Marketing", "Brand Positioning"]
-        },
-        {
-            statusBadge: "In Progress",
-            institution: "Cisco / Self-Paced Prep",
-            title: "Cisco Certified Network Associate (CCNA)",
-            description: "Gaining hands-on expertise in network routing, switching protocols, IP subnetting, and secure device access and administration.",
-            tags: ["Routing & Switching", "IP Subnetting", "Network Security", "TCP/IP Protocol"]
         }
     ],
 
@@ -65,37 +64,26 @@ const CONFIG = {
         {
             category: "Networking & Infrastructure",
             icon: "fa-solid fa-network-wired",
-            color: "from-blue-500 to-indigo-500",
+            color: "from-sky-400 to-indigo-500",
+            description: "Designing, configuring, and troubleshooting stable network architectures with core protocols and infrastructure standard practices.",
             tags: ["CCNA", "OSI Model", "TCP/IP", "Routing & Switching", "Subnetting", "Network Troubleshooting"],
             level: "80%"
-        },
-        {
-            category: "CMS & Custom Solutions",
-            icon: "fa-brands fa-wordpress",
-            color: "from-sky-500 to-blue-600",
-            tags: ["WordPress", "Custom Themes", "Plugin Development", "WooCommerce"],
-            level: "95%"
         },
         {
             category: "Frontend Frameworks & UI",
             icon: "fa-solid fa-code",
             color: "from-cyan-400 to-blue-500",
+            description: "Creating clean, user-friendly, and visually engaging web interfaces with a strong focus on usability and responsive design.",
             tags: ["Tailwind CSS", "Bootstrap 5", "HTML5", "CSS3 / SASS"],
             level: "90%"
         },
         {
             category: "Core Scripting & Logic",
             icon: "fa-brands fa-js",
-            color: "from-yellow-400 to-amber-500",
+            color: "from-amber-400 to-orange-500",
+            description: "Proficient in modern JavaScript, asynchronous handling, DOM operations, and structuring clean core frontend logic.",
             tags: ["JavaScript", "ES6+", "Async/Fetch API", "DOM Manipulation"],
             level: "85%"
-        },
-        {
-            category: "Database & Systems",
-            icon: "fa-solid fa-database",
-            color: "from-emerald-400 to-teal-600",
-            tags: ["MySQL", "Relational DB", "Query Optimization", "System Admin"],
-            level: "80%"
         }
     ],
 
@@ -132,22 +120,8 @@ const CONFIG = {
         }
     ],
 
-    testimonials: [
-        {
-            name: "Rafsan Ahmed",
-            designation: "CEO, BD Tech",
-            text: "Md. Amdadul Islam's work is outstanding! He delivered our complex e-commerce application on time with exceptional quality.",
-            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-        },
-        {
-            name: "Sabrina Rahman",
-            designation: "Founder, Fashion House",
-            text: "His expertise in web development and technical problem solving is truly commendable.",
-            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-        }
-    ],
+    testimonials: [],
 
-    // APIs Configuration
     telegramBotToken: "YOUR_TELEGRAM_BOT_TOKEN", 
     telegramChatId: "YOUR_TELEGRAM_CHAT_ID",   
     googleScriptUrl: "YOUR_GOOGLE_APPS_SCRIPT_URL", 
@@ -158,34 +132,13 @@ const CONFIG = {
    DOM RENDERER & LOGIC
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-    // Dynamically Inject Marquee CSS into document head
-    const marqueeStyle = document.createElement('style');
-    marqueeStyle.innerHTML = `
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee-slow {
-            display: flex !important;
-            width: max-content !important;
-            animation: marquee 50s linear infinite !important;
-        }
-        .animate-marquee-slow:hover {
-            animation-play-state: paused !important;
-        }
-    `;
-    document.head.appendChild(marqueeStyle);
-
-    // Initialize AOS Animation Library
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true });
     }
 
-    // Set Current Year
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Render Personal Info
     const navBrand = document.getElementById('nav-brand');
     if (navBrand) navBrand.textContent = CONFIG.personal.name;
 
@@ -198,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImg = document.getElementById('hero-img');
     if (heroImg) heroImg.src = CONFIG.personal.profileImage;
 
-    // Attach CV Link to Download Button
     const cvBtn = document.getElementById('download-cv-btn');
     if (cvBtn) {
         cvBtn.href = CONFIG.personal.cvUrl;
@@ -208,19 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const statExp = document.getElementById('stat-exp');
     if (statExp) statExp.textContent = CONFIG.personal.stats.experience;
 
-    // Render About Title
     const aboutTitle = document.getElementById('about-title');
     if (aboutTitle) aboutTitle.textContent = CONFIG.personal.aboutTitle;
 
-    // Render About Description with innerHTML
     const aboutDesc = document.getElementById('about-description');
     if (aboutDesc) aboutDesc.innerHTML = CONFIG.personal.aboutDesc;
-
-    const statProjects = document.getElementById('stat-projects');
-    if (statProjects) statProjects.textContent = CONFIG.personal.stats.completedProjects;
-
-    const statClients = document.getElementById('stat-clients');
-    if (statClients) statClients.textContent = CONFIG.personal.stats.happyClients || "5+";
 
     const contactPhone = document.getElementById('contact-phone');
     if (contactPhone) contactPhone.textContent = CONFIG.personal.phone;
@@ -240,14 +184,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Personal Info Grid
     const personalGrid = document.getElementById('personal-info-grid');
     if (personalGrid) {
+        const githubSocial = CONFIG.socials.find(s => s.icon.includes('github'));
+        const linkedinSocial = CONFIG.socials.find(s => s.icon.includes('linkedin'));
+
+        const githubUrl = githubSocial ? githubSocial.link : "https://github.com/Amdadul140";
+        const linkedinUrl = linkedinSocial ? linkedinSocial.link : "https://www.linkedin.com/in/md-amdadul-islam-6580933b2";
+
         personalGrid.innerHTML = `
             <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm shrink-0">
+                <div class="w-9 h-9 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-sm shrink-0">
                     <i class="fa-solid fa-phone"></i>
                 </div>
                 <div>
                     <span class="text-gray-400 text-xs block">Phone</span>
-                    <a href="tel:${CONFIG.personal.phone}" class="font-semibold text-white text-sm hover:text-blue-400 transition-colors">${CONFIG.personal.phone}</a>
+                    <a href="tel:${CONFIG.personal.phone}" class="font-semibold text-white text-sm hover:text-sky-400 transition-colors">${CONFIG.personal.phone}</a>
                 </div>
             </div>
 
@@ -272,61 +222,57 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm shrink-0">
-                    <i class="fa-solid fa-briefcase"></i>
+                <div class="w-9 h-9 rounded-lg bg-gray-500/10 text-gray-300 flex items-center justify-center text-sm shrink-0">
+                    <i class="fa-brands fa-github"></i>
                 </div>
                 <div>
-                    <span class="text-gray-400 text-xs block">Status</span>
-                    <p class="font-semibold text-emerald-400 text-sm">Available for Hire / Internship</p>
+                    <span class="text-gray-400 text-xs block">GitHub</span>
+                    <a href="${githubUrl}" target="_blank" class="font-semibold text-white text-sm hover:text-sky-400 transition-colors break-all">github.com/Amdadul140</a>
                 </div>
             </div>
         `;
     }
 
-    // Render Social Links
+    // Hero Socials
     const socialContainer = document.getElementById('hero-socials');
     if (socialContainer) {
         socialContainer.innerHTML = '';
         CONFIG.socials.forEach(s => {
             socialContainer.innerHTML += `
-                <a href="${s.link}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-gray-300 hover:text-brand hover:border-brand transition-all">
+                <a href="${s.link}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-gray-300 hover:text-sky-400 hover:border-sky-400 transition-all border border-slate-700/60 shadow-md">
                     <i class="${s.icon}"></i>
                 </a>
             `;
         });
     }
 
-    // Render Education & Experience
+    // Education & Certifications Timeline
     const eduContainer = document.getElementById('education-container');
     if (eduContainer && CONFIG.educationAndCertifications) {
         eduContainer.innerHTML = '';
         CONFIG.educationAndCertifications.forEach(item => {
             const tagsHtml = item.tags ? item.tags.map(tag => 
-                `<span class="px-3.5 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/80 rounded-full border border-slate-700/60">${tag}</span>`
+                `<span class="px-3.5 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/80 rounded-full border border-slate-700/60 hover:border-sky-500/40 transition-all">${tag}</span>`
             ).join('') : '';
 
             eduContainer.innerHTML += `
                 <div class="relative group" data-aos="fade-up">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-6 w-4 h-4 rounded-full bg-slate-950 border-2 border-blue-500 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-
-                    <div class="p-6 md:p-8 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/40 transition-all duration-300 shadow-xl">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-6 w-4 h-4 rounded-full bg-[#07090e] border-2 border-sky-400 group-hover:scale-125 group-hover:bg-sky-400 transition-all duration-300 shadow-[0_0_12px_rgba(56,189,248,0.6)]"></div>
+                    <div class="p-6 md:p-8 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 shadow-2xl">
                         <div class="flex items-center gap-3 flex-wrap mb-3">
-                            <span class="px-3 py-1 text-xs font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full">
+                            <span class="px-3 py-1 text-xs font-semibold text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full">
                                 ${item.statusBadge}
                             </span>
                             <span class="text-sm font-medium text-slate-400">
                                 ${item.institution}
                             </span>
                         </div>
-
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
                             ${item.title}
                         </h3>
-
                         <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
                             ${item.description}
                         </p>
-
                         <div class="flex flex-wrap gap-2">
                             ${tagsHtml}
                         </div>
@@ -336,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render Skills (Continuous Slow Marquee Slider + Interactive Cards)
+    // Skills Section & Marquee
     const skillsContainer = document.getElementById('skills-container');
     const skillsMarquee = document.getElementById('skills-marquee');
 
@@ -346,48 +292,40 @@ document.addEventListener('DOMContentLoaded', () => {
             if (s.tags) allSkills.push(...s.tags);
         });
 
-        // Duplicate the skills array to create seamless loop
-        const duplicatedSkills = [...allSkills, ...allSkills, ...allSkills];
+        const duplicatedSkills = [...allSkills, ...allSkills];
 
-        // 1. Render Moving Marquee Items (Enforcing Slow Motion)
         if (skillsMarquee) {
-            skillsMarquee.classList.add('animate-marquee-slow');
             skillsMarquee.innerHTML = duplicatedSkills.map(tag => `
-                <div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 shadow-md group hover:border-blue-500/50 transition-all cursor-pointer shrink-0">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 group-hover:scale-125 transition-transform"></span>
-                    <span class="text-sm font-semibold text-slate-200 group-hover:text-blue-400 transition-colors">${tag}</span>
+                <div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 shadow-md group hover:border-sky-400/50 transition-all cursor-pointer shrink-0">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:scale-125 transition-transform"></span>
+                    <span class="text-sm font-semibold text-slate-200 group-hover:text-sky-400 transition-colors">${tag}</span>
                 </div>
             `).join('');
         }
 
-        // 2. Render Skill Category Cards
         if (skillsContainer) {
             skillsContainer.innerHTML = '';
             CONFIG.skills.forEach(skill => {
                 const tagsHtml = skill.tags.map(tag => 
-                    `<span class="px-3 py-1.5 text-xs font-medium bg-slate-800/90 text-slate-300 rounded-lg border border-slate-700/60 hover:border-blue-500/40 hover:text-white transition-all">${tag}</span>`
+                    `<span class="px-3.5 py-1.5 text-xs font-medium bg-slate-800/80 text-slate-300 rounded-full border border-slate-700/60 hover:border-sky-400/40 hover:text-white transition-all">${tag}</span>`
                 ).join('');
 
                 skillsContainer.innerHTML += `
-                    <div class="p-6 md:p-7 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-xl hover:border-blue-500/40 hover:shadow-blue-500/5 transition-all duration-300 flex flex-col justify-between group" data-aos="zoom-in">
+                    <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-2xl hover:border-sky-500/30 transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-3.5">
-                                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br ${skill.color} flex items-center justify-center text-white text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                        <i class="${skill.icon}"></i>
-                                    </div>
-                                    <h3 class="font-bold text-white text-lg md:text-xl group-hover:text-blue-400 transition-colors">${skill.category}</h3>
-                                </div>
-                                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">${skill.level}</span>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="${skill.icon}"></i>
                             </div>
                             
-                            <div class="flex flex-wrap gap-2 my-5">
+                            <h3 class="font-bold text-white text-xl md:text-2xl mb-3 group-hover:text-sky-400 transition-colors">${skill.category}</h3>
+                            
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                ${skill.description}
+                            </p>
+
+                            <div class="flex flex-wrap gap-2.5">
                                 ${tagsHtml}
                             </div>
-                        </div>
-
-                        <div class="w-full bg-slate-800/80 rounded-full h-2 overflow-hidden mt-2 border border-slate-700/30">
-                            <div class="bg-gradient-to-r ${skill.color} h-2 rounded-full transition-all duration-1000 group-hover:brightness-125" style="width: ${skill.level}"></div>
                         </div>
                     </div>
                 `;
@@ -395,65 +333,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render Experience
-    const expContainer = document.getElementById('experience-container');
-    if (expContainer) {
-        expContainer.innerHTML = '';
-        CONFIG.experience.forEach(exp => {
-            expContainer.innerHTML += `
-                <div class="relative pl-8" data-aos="fade-up">
-                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 bg-brand rounded-full border-4 border-gray-900"></div>
-                    <div class="glassmorphism-card p-6 rounded-2xl">
-                        <span class="text-xs text-brand font-semibold uppercase tracking-wider">${exp.duration}</span>
-                        <h3 class="text-xl font-bold font-heading text-white mt-1">${exp.role}</h3>
-                        <h4 class="text-sm text-gray-400 font-medium mb-3">${exp.company}</h4>
-                        <p class="text-gray-300 text-sm">${exp.desc}</p>
-                    </div>
-                </div>
-            `;
-        });
-    }
-
-    // Render Portfolio
+    // Portfolio
     const portfolioContainer = document.getElementById('portfolio-container');
     if (portfolioContainer) {
         portfolioContainer.innerHTML = '';
         CONFIG.portfolio.forEach(item => {
             portfolioContainer.innerHTML += `
-                <div class="glassmorphism-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                <div class="glassmorphism-card rounded-2xl overflow-hidden group border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 shadow-xl" data-aos="fade-up">
                     <div class="portfolio-img-container">
                         <img src="${item.image}" alt="${item.title}" class="portfolio-img">
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-brand font-semibold uppercase tracking-wider">${item.category}</span>
+                        <span class="text-xs text-sky-400 font-semibold uppercase tracking-wider">${item.category}</span>
                         <h3 class="text-xl font-bold font-heading text-white mt-1 mb-4">${item.title}</h3>
                         <div class="flex space-x-4">
-                            <a href="${item.liveUrl}" target="_blank" class="flex-1 gradient-btn py-2 text-center rounded-xl text-sm font-semibold text-white">
+                            <a href="${item.liveUrl}" target="_blank" class="flex-1 gradient-btn py-2 text-center rounded-xl text-sm font-semibold text-white shadow-md">
                                 Live Demo <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                             </a>
-                            <a href="${item.githubUrl}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-white hover:text-brand transition-colors">
+                            <a href="${item.githubUrl}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-white hover:text-sky-400 transition-colors border border-slate-700/60">
                                 <i class="fa-brands fa-github text-lg"></i>
                             </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-    }
-
-    // Render Testimonials
-    const testContainer = document.getElementById('testimonials-container');
-    if (testContainer) {
-        testContainer.innerHTML = '';
-        CONFIG.testimonials.forEach(t => {
-            testContainer.innerHTML += `
-                <div class="glassmorphism-card p-6 rounded-2xl flex flex-col justify-between" data-aos="fade-up">
-                    <p class="text-gray-300 italic mb-6">"${t.text}"</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="${t.avatar}" alt="${t.name}" class="w-12 h-12 rounded-full object-cover border-2 border-brand">
-                        <div>
-                            <h4 class="text-white font-bold text-sm">${t.name}</h4>
-                            <p class="text-xs text-gray-400">${t.designation}</p>
                         </div>
                     </div>
                 </div>
@@ -528,7 +427,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const telegramMsg = `<b>New Portfolio Message!</b>\n\n<b>Name:</b> ${name}\n<b>Phone:</b> ${phone}\n<b>Email:</b> ${email}\n<b>Message:</b> ${message}`;
 
             try {
-                // Telegram Bot Integration
                 if (CONFIG.telegramBotToken !== "YOUR_TELEGRAM_BOT_TOKEN") {
                     await fetch(`https://api.telegram.org/bot${CONFIG.telegramBotToken}/sendMessage`, {
                         method: 'POST',
@@ -541,7 +439,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                // Google Sheet Script Integration
                 if (CONFIG.googleScriptUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL") {
                     await fetch(CONFIG.googleScriptUrl, {
                         method: 'POST',
@@ -553,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (formStatus) {
                     formStatus.textContent = "Thank you! Your message has been sent successfully.";
-                    formStatus.className = "text-center text-sm font-medium mt-2 text-green-400";
+                    formStatus.className = "text-center text-sm font-medium mt-2 text-emerald-400";
                 }
                 contactForm.reset();
             } catch (error) {
@@ -571,15 +468,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* ==========================================================================
-   Dark / Light Theme Toggle Functionality
-   ========================================================================== */
+/* Theme Toggle */
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeToggleIcon = document.getElementById('theme-toggle-icon');
 const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
 const themeToggleIconMobile = document.getElementById('theme-toggle-icon-mobile');
 
-// Check saved user preference from LocalStorage
 const currentTheme = localStorage.getItem('portfolio-theme') || 'dark';
 
 if (currentTheme === 'light') {
@@ -592,24 +486,28 @@ if (currentTheme === 'light') {
 function updateThemeIcons(theme) {
     const isLight = theme === 'light';
     const iconClass = isLight ? 'fa-solid fa-moon text-indigo-600' : 'fa-solid fa-sun text-yellow-400';
-    
     if (themeToggleIcon) themeToggleIcon.className = iconClass;
     if (themeToggleIconMobile) themeToggleIconMobile.className = iconClass;
 }
 
+function triggerIconAnimation() {
+    [themeToggleIcon, themeToggleIconMobile].forEach(icon => {
+        if (icon) {
+            icon.classList.remove('animate-theme-icon');
+            void icon.offsetWidth;
+            icon.classList.add('animate-theme-icon');
+        }
+    });
+}
+
 function toggleTheme() {
+    triggerIconAnimation();
     document.body.classList.toggle('light-theme');
     const isLight = document.body.classList.contains('light-theme');
     const newTheme = isLight ? 'light' : 'dark';
-    
     localStorage.setItem('portfolio-theme', newTheme);
-    updateThemeIcons(newTheme);
+    setTimeout(() => { updateThemeIcons(newTheme); }, 150);
 }
 
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', toggleTheme);
-}
-
-if (themeToggleMobileBtn) {
-    themeToggleMobileBtn.addEventListener('click', toggleTheme);
-}
+if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener('click', toggleTheme);

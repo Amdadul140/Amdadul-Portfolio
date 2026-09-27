@@ -1,49 +1,52 @@
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0b0f19;
+    background-color: #07090e;
     color: #f3f4f6;
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Glassmorphism Styles */
 .glassmorphism {
-    background: rgba(17, 24, 39, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .glassmorphism-card {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glassmorphism-card:hover {
-    border-color: rgba(58, 134, 255, 0.4);
-    box-shadow: 0 10px 30px -10px rgba(58, 134, 255, 0.3);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.25);
+    transform: translateY(-2px);
 }
 
-/* Text Gradient & Buttons */
+/* Vibrant Gradient Text & Buttons */
 .gradient-text {
-    background: linear-gradient(135deg, #3a86ff 0%, #60a5fa 50%, #c084fc 100%);
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .gradient-btn {
-    background: linear-gradient(135deg, #3a86ff 0%, #2563eb 100%);
-    box-shadow: 0 4px 20px rgba(58, 134, 255, 0.35);
+    background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
     transition: all 0.3s ease;
 }
 
 .gradient-btn:hover {
-    box-shadow: 0 6px 25px rgba(58, 134, 255, 0.6);
+    box-shadow: 0 6px 25px rgba(2, 132, 199, 0.6);
     transform: translateY(-2px);
 }
 
-/* Portfolio Hover Smooth Top-to-Bottom Scroll Effect */
+/* Portfolio Hover Top-to-Bottom Scroll Effect */
 .portfolio-img-container {
     position: relative;
     overflow: hidden;
@@ -64,16 +67,14 @@ body {
 /* Floating Elements Animation */
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
 }
 
 .animate-float {
     animation: float 5s ease-in-out infinite;
 }
 
-/* ==========================================================================
-   Continuous Infinite Skills Marquee Animation (Optimized & Updated)
-   ========================================================================== */
+/* Infinite Marquee Animation */
 @keyframes marquee {
     0% {
         transform: translate3d(0, 0, 0);
@@ -86,16 +87,14 @@ body {
 .animate-marquee {
     display: flex !important;
     width: max-content !important;
-    animation: marquee 50s linear infinite !important;
+    animation: marquee 25s linear infinite !important;
     will-change: transform;
 }
 
-/* Ensure individual skill badges inside marquee do not shrink */
 .animate-marquee > * {
     flex-shrink: 0;
 }
 
-/* Pause animation on hover */
 .animate-marquee:hover {
     animation-play-state: paused !important;
 }
@@ -106,7 +105,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #0b0f19;
+    background: #07090e;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -115,121 +114,113 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #3a86ff;
+    background: #38bdf8;
 }
 
-/* Education & Certifications Section Styling */
-.education-section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+/* Theme Toggle Button Glow */
+.theme-btn-glow:hover {
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #353232;
-    position: relative;
-    display: inline-block;
+body.light-theme .theme-btn-glow:hover {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #6c5ce7;
-    border-radius: 2px;
+@keyframes themeIconRotate {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+        opacity: 0.2;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
 }
 
-.edu-list {
+.animate-theme-icon {
+    animation: themeIconRotate 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ==========================================
+   Theme Toggle Button Styling (Light & Dark)
+   ========================================== */
+
+/* Dark Mode / Default Button Styling */
+#theme-toggle,
+.theme-btn {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-}
-
-.edu-item {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 28px 30px;
-    border-bottom: 1px solid #e2e8f0;
+    justify-content: center;
     transition: all 0.3s ease;
-    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover Effect like Image 2 */
-.edu-item:hover {
-    background: linear-gradient(90deg, #6c5ce7 0%, #4834d4 100%);
-    color: #ffffff;
-    border-bottom-color: transparent;
+#theme-toggle:hover,
+.theme-btn:hover {
+    background-color: #334155 !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
-.edu-header {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex: 1;
+/* Light Mode Button Styling */
+body.light-theme #theme-toggle,
+body.light-theme .theme-btn {
+    background-color: #ffffff !important;
+    color: #4f46e5 !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
-.edu-num {
-    font-size: 22px;
-    font-weight: 800;
-    color: #6c5ce7;
-    transition: color 0.3s ease;
+body.light-theme #theme-toggle:hover,
+body.light-theme .theme-btn:hover {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 0 15px rgba(79, 70, 229, 0.25) !important;
 }
 
-.edu-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #2d3436;
-    margin: 0;
-    transition: color 0.3s ease;
+#theme-toggle svg,
+.theme-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
 }
 
-.edu-details {
-    flex: 1.2;
-    padding-left: 20px;
+#theme-toggle:hover svg,
+.theme-btn:hover svg {
+    transform: scale(1.1);
 }
 
-.edu-sub {
-    font-size: 14px;
-    font-weight: 600;
-    color: #2563eb;
-    margin-bottom: 6px;
-    transition: color 0.3s ease;
+/* ==========================================
+   Scrolling Text (Marquee) - Universal Fix
+   ========================================== */
+
+/* Dark Mode Scrolling Badges */
+.animate-marquee > div,
+.animate-marquee > span,
+.animate-marquee .bg-slate-800\/80 {
+    background-color: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
-.edu-desc {
-    font-size: 14px;
-    color: #64748b;
-    margin: 0;
-    line-height: 1.5;
-    transition: color 0.3s ease;
+.animate-marquee span,
+.animate-marquee p,
+.animate-marquee div {
+    color: #f3f4f6 !important;
+    font-weight: 500 !important;
 }
 
-/* Change text colors on hover */
-.edu-item:hover .edu-num,
-.edu-item:hover .edu-title,
-.edu-item:hover .edu-sub,
-.edu-item:hover .edu-desc {
-    color: #ffffff;
-}
-
-/* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    .edu-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 20px 15px;
-    }
-    
-    .edu-details {
-        padding-left: 0;
-    }
+.from-\[\#07090e\] {
+    --tw-gradient-from: #07090e var(--tw-gradient-from-position) !important;
 }
 
 /* ==========================================
@@ -246,15 +237,17 @@ body.light-theme header {
 }
 
 body.light-theme .glassmorphism {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(226, 232, 240, 0.8);
     backdrop-filter: blur(16px);
 }
 
-body.light-theme .glassmorphism-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+body.light-theme .glassmorphism-card,
+body.light-theme .bg-slate-900\/60,
+body.light-theme .bg-slate-800\/40 {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.light-theme .text-gray-100,
@@ -263,19 +256,9 @@ body.light-theme .text-white {
     color: #0f172a !important;
 }
 
-body.light-theme .text-gray-400 {
+body.light-theme .text-gray-400,
+body.light-theme .text-slate-400 {
     color: #475569 !important;
-}
-
-body.light-theme .bg-gray-900\/40,
-body.light-theme .bg-gray-900\/60,
-body.light-theme .education-section {
-    background-color: #f1f5f9 !important;
-}
-
-body.light-theme .edu-item {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
 }
 
 body.light-theme input,
@@ -283,4 +266,28 @@ body.light-theme textarea {
     background-color: #ffffff !important;
     color: #0f172a !important;
     border-color: #cbd5e1 !important;
+}
+
+/* Light Mode Scrolling Badges & Overlays */
+body.light-theme .animate-marquee > div,
+body.light-theme .animate-marquee > span,
+body.light-theme .animate-marquee .bg-slate-800\/80 {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .animate-marquee span,
+body.light-theme .animate-marquee p,
+body.light-theme .animate-marquee div {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+body.light-theme .from-\[\#07090e\] {
+    --tw-gradient-from: #f8fafc var(--tw-gradient-from-position) !important;
+}
+
+body.light-theme .to-transparent {
+    --tw-gradient-to: rgba(248, 250, 252, 0) var(--tw-gradient-to-position) !important;
 }
