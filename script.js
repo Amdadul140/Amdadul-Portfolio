@@ -1,23 +1,30 @@
 /* ==========================================================================
-   DYNAMIC CONFIGURATION (All original variables preserved)
+   DYNAMIC CONFIGURATION (Executive Corporate Palette & Preserved Logic)
    ========================================================================== */
 const CONFIG = {
     personal: {
         name: "Md. Amdadul Islam",
-        titleRoles: ["Junior Developer", "Junior Networking Engineer"],
+        titleRoles: ["Junior Network Engineer", "Junior Web Developer"],
         phone: "01537586283",
         email: "mdamdadulislam140@gmail.com",
         location: "Tejgaon, Dhaka-1215",
-        bio: "I am a final‑year Computer Science and Engineering student at Southeast University set to graduate in 2027. I love networking and IT infrastructure. I am learning CCNA concepts, the OSI/TCP‑IP model and IP subnetting. I also dabble in web development with HTML5 and CSS3. I am looking for internship or entry‑level opportunities, in Network Engineering, System Administration or IT Infrastructure.",
+        bio: "I am a final-year Computer Science and Engineering student at Southeast University, passionate about Computer Networking and IT Infrastructure. I am currently building my skills in CCNA, OSI/TCP-IP, IP Subnetting, Network Security, and Network Administration. I also have experience with HTML5, CSS3, and web development. I am seeking opportunities to apply my knowledge through real-world projects and grow as a Network Engineer.",
         
         aboutTitle: "Architecting Networks & Building Smart Web Solutions",
-        aboutDesc: `<p class="mb-3">I am a CSE student at Southeast University (Graduating 2027) passionate about network infrastructure and modern web engineering. I focus on bridging hardware infrastructure with software logic to build scalable, secure, and reliable digital systems.</p>
-        <p>With expertise in CCNA concepts, routing protocols, and full-stack development, I solve complex infrastructure challenges and engineer web applications. I am seeking opportunities as a Network Engineer, System Administrator, or Web Developer.</p>`,
+        aboutDesc: `<p class="mb-4">
+            I am <strong>MD. AMDADUL ISLAM</strong>, a final-year Computer Science &amp; Engineering student at <strong>Southeast University</strong>, Bangladesh. 
+            My interests include <strong>software development, full-stack web development, AI/ML research, cybersecurity, and computer networking</strong>. 
+            I enjoy turning ideas into practical software solutions and continuously improving my technical skills through hands-on projects and real-world problem solving.
+        </p>
+        <p class="mb-4">
+            I am currently developing my expertise in <strong>web technologies, API development, software testing, Git/GitHub, and machine learning techniques</strong>, including <strong>Explainable AI (XAI)</strong> and <strong>imbalanced-data handling</strong>. 
+            I am passionate about learning emerging technologies and applying them to build efficient, reliable, and impactful solutions.
+        </p>`,
         
-        profileImage: "suny.jpg",
-        cvUrl: "CV.pdf",
+        profileImage: "Image & CV/photo.jpg",
+        cvUrl: "Image & CV/CV.pdf",
         stats: {
-            experience: "Fresher Graduate",
+            experience: "Aspiring Network Engineer",
             completedProjects: "2+",
             happyClients: "5+"
         }
@@ -34,7 +41,7 @@ const CONFIG = {
             statusBadge: "Expected June 2027",
             institution: "Southeast University",
             title: "B.Sc. in Computer Science & Engineering",
-            description: "Currently pursuing B.Sc. in Computer Science & Engineering (11th Semester, CGPA: 2.72 / 4.00). Focusing on networking, system administration, software development, and core computer science fundamentals.",
+            description: "Currently pursuing B.Sc. in Computer Science & Engineering (11th Semester). Focusing on networking, system administration, software development, and core computer science fundamentals.",
             tags: ["Networking", "Web Development", "OSI/TCP-IP", "CCNA"]
         },
         {
@@ -60,72 +67,61 @@ const CONFIG = {
         }
     ],
 
+    
     skills: [
         {
             category: "Networking & Infrastructure",
             icon: "fa-solid fa-network-wired",
-            color: "from-sky-400 to-indigo-500",
+            color: "from-blue-500 to-indigo-600",
             description: "Designing, configuring, and troubleshooting stable network architectures with core protocols and infrastructure standard practices.",
             tags: ["CCNA", "OSI Model", "TCP/IP", "Routing & Switching", "Subnetting", "Network Troubleshooting"],
             level: "80%"
         },
         {
-            category: "Frontend Frameworks & UI",
+            category: "Frontend Development & UI",
             icon: "fa-solid fa-code",
-            color: "from-cyan-400 to-blue-500",
+            color: "from-cyan-500 to-blue-600",
             description: "Creating clean, user-friendly, and visually engaging web interfaces with a strong focus on usability and responsive design.",
-            tags: ["Tailwind CSS", "Bootstrap 5", "HTML5", "CSS3 / SASS"],
+            tags: ["Tailwind CSS", "Bootstrap 5", "HTML5", "CSS3"],
             level: "90%"
         },
         {
             category: "Core Scripting & Logic",
             icon: "fa-brands fa-js",
-            color: "from-amber-400 to-orange-500",
+            color: "from-slate-600 to-blue-700",
             description: "Proficient in modern JavaScript, asynchronous handling, DOM operations, and structuring clean core frontend logic.",
             tags: ["JavaScript", "ES6+", "Async/Fetch API", "DOM Manipulation"],
             level: "85%"
         }
     ],
 
-    experience: [
-        {
-            company: "Academic & Personal Projects",
-            role: "Network & Web Project Trainee",
-            duration: "2023 - Present",
-            desc: "Configured network topologies, subnetting models, and built custom web portals using modern web stacks."
-        }
-    ],
-
     portfolio: [
         {
             title: "E-Commerce Web Application",
-            category: "Laravel",
+            category: "Laravel / Full Stack",
             image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
             liveUrl: "https://example.com",
-            githubUrl: "https://github.com"
+            githubUrl: "https://github.com/Amdadul140"
         },
         {
             title: "Custom News Portal Theme",
-            category: "WordPress",
+            category: "PHP / CMS",
             image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
             liveUrl: "https://example.com",
-            githubUrl: "https://github.com"
+            githubUrl: "https://github.com/Amdadul140"
         },
         {
             title: "Corporate Landing Page",
             category: "Tailwind CSS",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
             liveUrl: "https://example.com",
-            githubUrl: "https://github.com"
+            githubUrl: "https://github.com/Amdadul140"
         }
     ],
 
-    testimonials: [],
-
     telegramBotToken: "YOUR_TELEGRAM_BOT_TOKEN", 
     telegramChatId: "YOUR_TELEGRAM_CHAT_ID",   
-    googleScriptUrl: "YOUR_GOOGLE_APPS_SCRIPT_URL", 
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.528373307519!2d90.38883657613523!3d23.76417038817726!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8a049d531ef%3A0xb35181b5ff9d4e50!2sTejgaon%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd"
+    googleScriptUrl: "YOUR_GOOGLE_APPS_SCRIPT_URL"
 };
 
 /* ==========================================================================
@@ -140,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const navBrand = document.getElementById('nav-brand');
-    if (navBrand) navBrand.textContent = CONFIG.personal.name;
+   if (navBrand) navBrand.textContent = "Amdadul.dev";
 
     const heroName = document.getElementById('hero-name');
     if (heroName) heroName.textContent = CONFIG.personal.name;
@@ -149,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroBio) heroBio.textContent = CONFIG.personal.bio;
 
     const heroImg = document.getElementById('hero-img');
-    if (heroImg) heroImg.src = CONFIG.personal.profileImage;
+    if (heroImg && CONFIG.personal.profileImage) heroImg.src = CONFIG.personal.profileImage;
 
     const cvBtn = document.getElementById('download-cv-btn');
     if (cvBtn) {
@@ -175,99 +171,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactLocation = document.getElementById('contact-location');
     if (contactLocation) contactLocation.textContent = CONFIG.personal.location;
 
-    const footerName = document.getElementById('footer-name');
-    if (footerName) footerName.textContent = CONFIG.personal.name;
-
-    const googleMap = document.getElementById('google-map');
-    if (googleMap) googleMap.src = CONFIG.mapEmbedUrl;
-
-    // Personal Info Grid
-    const personalGrid = document.getElementById('personal-info-grid');
-    if (personalGrid) {
-        const githubSocial = CONFIG.socials.find(s => s.icon.includes('github'));
-        const linkedinSocial = CONFIG.socials.find(s => s.icon.includes('linkedin'));
-
-        const githubUrl = githubSocial ? githubSocial.link : "https://github.com/Amdadul140";
-        const linkedinUrl = linkedinSocial ? linkedinSocial.link : "https://www.linkedin.com/in/md-amdadul-islam-6580933b2";
-
-        personalGrid.innerHTML = `
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center text-sm shrink-0">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div>
-                    <span class="text-gray-400 text-xs block">Phone</span>
-                    <a href="tel:${CONFIG.personal.phone}" class="font-semibold text-white text-sm hover:text-sky-400 transition-colors">${CONFIG.personal.phone}</a>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-sm shrink-0">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div>
-                    <span class="text-gray-400 text-xs block">Email</span>
-                    <a href="mailto:${CONFIG.personal.email}" class="font-semibold text-white text-sm hover:text-indigo-400 transition-colors break-all">${CONFIG.personal.email}</a>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-sm shrink-0">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <div>
-                    <span class="text-gray-400 text-xs block">Location</span>
-                    <p class="font-semibold text-white text-sm">${CONFIG.personal.location}</p>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                <div class="w-9 h-9 rounded-lg bg-gray-500/10 text-gray-300 flex items-center justify-center text-sm shrink-0">
-                    <i class="fa-brands fa-github"></i>
-                </div>
-                <div>
-                    <span class="text-gray-400 text-xs block">GitHub</span>
-                    <a href="${githubUrl}" target="_blank" class="font-semibold text-white text-sm hover:text-sky-400 transition-colors break-all">github.com/Amdadul140</a>
-                </div>
-            </div>
-        `;
-    }
-
-    // Hero Socials
-    const socialContainer = document.getElementById('hero-socials');
-    if (socialContainer) {
-        socialContainer.innerHTML = '';
-        CONFIG.socials.forEach(s => {
-            socialContainer.innerHTML += `
-                <a href="${s.link}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-gray-300 hover:text-sky-400 hover:border-sky-400 transition-all border border-slate-700/60 shadow-md">
-                    <i class="${s.icon}"></i>
-                </a>
-            `;
-        });
-    }
-
     // Education & Certifications Timeline
     const eduContainer = document.getElementById('education-container');
     if (eduContainer && CONFIG.educationAndCertifications) {
         eduContainer.innerHTML = '';
         CONFIG.educationAndCertifications.forEach(item => {
             const tagsHtml = item.tags ? item.tags.map(tag => 
-                `<span class="px-3.5 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/80 rounded-full border border-slate-700/60 hover:border-sky-500/40 transition-all">${tag}</span>`
+                `<span class="px-3.5 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/80 rounded-full border border-slate-700/60 hover:border-blue-500/40 transition-all">${tag}</span>`
             ).join('') : '';
 
             eduContainer.innerHTML += `
                 <div class="relative group" data-aos="fade-up">
-                    <div class="absolute -left-[31px] md:-left-[47px] top-6 w-4 h-4 rounded-full bg-[#07090e] border-2 border-sky-400 group-hover:scale-125 group-hover:bg-sky-400 transition-all duration-300 shadow-[0_0_12px_rgba(56,189,248,0.6)]"></div>
-                    <div class="p-6 md:p-8 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 shadow-2xl">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-6 w-4 h-4 rounded-full bg-[#090d16] border-2 border-blue-500 group-hover:scale-125 group-hover:bg-blue-500 transition-all duration-300 shadow-[0_0_12px_rgba(37,99,235,0.6)]"></div>
+                    <div class="p-6 md:p-8 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/40 transition-all duration-300 shadow-2xl">
                         <div class="flex items-center gap-3 flex-wrap mb-3">
-                            <span class="px-3 py-1 text-xs font-semibold text-sky-400 bg-sky-500/10 border border-sky-500/20 rounded-full">
+                            <span class="px-3 py-1 text-xs font-semibold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-full">
                                 ${item.statusBadge}
                             </span>
                             <span class="text-sm font-medium text-slate-400">
                                 ${item.institution}
                             </span>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                             ${item.title}
                         </h3>
                         <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
@@ -282,75 +207,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Skills Section & Marquee
-    const skillsContainer = document.getElementById('skills-container');
-    const skillsMarquee = document.getElementById('skills-marquee');
-
-    if (CONFIG.skills) {
-        let allSkills = [];
-        CONFIG.skills.forEach(s => {
-            if (s.tags) allSkills.push(...s.tags);
-        });
-
-        const duplicatedSkills = [...allSkills, ...allSkills];
-
-        if (skillsMarquee) {
-            skillsMarquee.innerHTML = duplicatedSkills.map(tag => `
-                <div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 shadow-md group hover:border-sky-400/50 transition-all cursor-pointer shrink-0">
-                    <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:scale-125 transition-transform"></span>
-                    <span class="text-sm font-semibold text-slate-200 group-hover:text-sky-400 transition-colors">${tag}</span>
-                </div>
-            `).join('');
-        }
-
-        if (skillsContainer) {
-            skillsContainer.innerHTML = '';
-            CONFIG.skills.forEach(skill => {
-                const tagsHtml = skill.tags.map(tag => 
-                    `<span class="px-3.5 py-1.5 text-xs font-medium bg-slate-800/80 text-slate-300 rounded-full border border-slate-700/60 hover:border-sky-400/40 hover:text-white transition-all">${tag}</span>`
-                ).join('');
-
-                skillsContainer.innerHTML += `
-                    <div class="p-8 rounded-3xl bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 shadow-2xl hover:border-sky-500/30 transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up">
-                        <div>
-                            <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i class="${skill.icon}"></i>
-                            </div>
-                            
-                            <h3 class="font-bold text-white text-xl md:text-2xl mb-3 group-hover:text-sky-400 transition-colors">${skill.category}</h3>
-                            
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                                ${skill.description}
-                            </p>
-
-                            <div class="flex flex-wrap gap-2.5">
-                                ${tagsHtml}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-    }
-
     // Portfolio
     const portfolioContainer = document.getElementById('portfolio-container');
-    if (portfolioContainer) {
+    if (portfolioContainer && CONFIG.portfolio) {
         portfolioContainer.innerHTML = '';
         CONFIG.portfolio.forEach(item => {
             portfolioContainer.innerHTML += `
-                <div class="glassmorphism-card rounded-2xl overflow-hidden group border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 shadow-xl" data-aos="fade-up">
+                <div class="glassmorphism-card rounded-2xl overflow-hidden group border border-slate-800/80 hover:border-blue-500/40 transition-all duration-300 shadow-xl" data-aos="fade-up">
                     <div class="portfolio-img-container">
                         <img src="${item.image}" alt="${item.title}" class="portfolio-img">
                     </div>
                     <div class="p-6">
-                        <span class="text-xs text-sky-400 font-semibold uppercase tracking-wider">${item.category}</span>
+                        <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider">${item.category}</span>
                         <h3 class="text-xl font-bold font-heading text-white mt-1 mb-4">${item.title}</h3>
                         <div class="flex space-x-4">
                             <a href="${item.liveUrl}" target="_blank" class="flex-1 gradient-btn py-2 text-center rounded-xl text-sm font-semibold text-white shadow-md">
                                 Live Demo <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                             </a>
-                            <a href="${item.githubUrl}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-white hover:text-sky-400 transition-colors border border-slate-700/60">
+                            <a href="${item.githubUrl}" target="_blank" class="w-10 h-10 glassmorphism rounded-xl flex items-center justify-center text-white hover:text-blue-400 transition-colors border border-slate-700/60">
                                 <i class="fa-brands fa-github text-lg"></i>
                             </a>
                         </div>
@@ -369,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function typeEffect() {
         if (!typingElement) return;
 
-        const roles = CONFIG.personal.titleRoles || ["Junior Developer"];
+        const roles = CONFIG.personal.titleRoles || ["Junior Network Engineer"];
         const currentRole = roles[roleIndex].trim();
 
         if (isDeleting) {
@@ -382,13 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDeleting && charIndex === currentRole.length) {
             isDeleting = true;
-            setTimeout(typeEffect, 2000);
+            setTimeout(typeEffect, 2200);
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(typeEffect, 500);
+            setTimeout(typeEffect, 400);
         } else {
-            setTimeout(typeEffect, isDeleting ? 50 : 100);
+            setTimeout(typeEffect, isDeleting ? 40 : 90);
         }
     }
     typeEffect();
@@ -419,12 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.innerHTML = `<span>Sending...</span> <i class="fa-solid fa-spinner animate-spin"></i>`;
             }
 
-            const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
-            const email = document.getElementById('form-email').value;
-            const message = document.getElementById('form-message').value;
+            const firstName = document.getElementById('form-first-name')?.value || '';
+            const lastName = document.getElementById('form-last-name')?.value || '';
+            const phone = document.getElementById('form-phone')?.value || '';
+            const email = document.getElementById('form-email')?.value || '';
+            const service = document.getElementById('form-service')?.value || '';
+            const message = document.getElementById('form-message')?.value || '';
 
-            const telegramMsg = `<b>New Portfolio Message!</b>\n\n<b>Name:</b> ${name}\n<b>Phone:</b> ${phone}\n<b>Email:</b> ${email}\n<b>Message:</b> ${message}`;
+            const telegramMsg = `<b>New Contact Form Submission!</b>\n\n<b>Name:</b> ${firstName} ${lastName}\n<b>Phone:</b> ${phone}\n<b>Email:</b> ${email}\n<b>Service:</b> ${service}\n<b>Message:</b> ${message}`;
 
             try {
                 if (CONFIG.telegramBotToken !== "YOUR_TELEGRAM_BOT_TOKEN") {
@@ -444,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, phone, email, message })
+                        body: JSON.stringify({ name: `${firstName} ${lastName}`, phone, email, service, message })
                     });
                 }
 
@@ -468,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* Theme Toggle */
+/* Theme Toggle Handler */
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeToggleIcon = document.getElementById('theme-toggle-icon');
 const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
@@ -485,7 +361,7 @@ if (currentTheme === 'light') {
 
 function updateThemeIcons(theme) {
     const isLight = theme === 'light';
-    const iconClass = isLight ? 'fa-solid fa-moon text-indigo-600' : 'fa-solid fa-sun text-yellow-400';
+    const iconClass = isLight ? 'fa-solid fa-moon text-blue-600' : 'fa-solid fa-sun text-blue-400';
     if (themeToggleIcon) themeToggleIcon.className = iconClass;
     if (themeToggleIconMobile) themeToggleIconMobile.className = iconClass;
 }
