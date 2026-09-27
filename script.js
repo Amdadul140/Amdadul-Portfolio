@@ -53,7 +53,7 @@ const CONFIG = {
         },
         {
             statusBadge: "June 2023",
-            institution: "sit foundation bd",
+            institution: "Sit foundation bd",
             title: "Diploma in Computer Science & ICT",
             description: "Completed comprehensive practical training in web development, computer operations, hardware fundamentals, and system maintenance.",
             tags: ["Practical Web Dev", "System Training", "ICT Fundamentals"]
@@ -67,7 +67,6 @@ const CONFIG = {
         }
     ],
 
-    
     skills: [
         {
             category: "Networking & Infrastructure",
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const navBrand = document.getElementById('nav-brand');
-   if (navBrand) navBrand.textContent = "Amdadul.dev";
+    if (navBrand) navBrand.textContent = "Amdadul.dev";
 
     const heroName = document.getElementById('hero-name');
     if (heroName) heroName.textContent = CONFIG.personal.name;
@@ -170,6 +169,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contactLocation = document.getElementById('contact-location');
     if (contactLocation) contactLocation.textContent = CONFIG.personal.location;
+
+    // Smooth Scroll for Anchor Links (View Projects, Navigation Links, etc.)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
 
     // Education & Certifications Timeline
     const eduContainer = document.getElementById('education-container');

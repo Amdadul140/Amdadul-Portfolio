@@ -21,6 +21,7 @@ body {
 .glassmorphism-card {
     background: rgba(255, 255, 255, 0.025);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.07);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -79,6 +80,11 @@ body {
 }
 
 /* Custom Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #1e293b #090d16;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -134,7 +140,7 @@ body.light-theme .theme-btn-glow:hover {
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: justify-center;
+    justify-content: center; /* FIXED: Corrected invalid justify-center */
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -193,54 +199,13 @@ body.light-theme .hero-social-btn:hover {
     box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }
 
-/* Light Mode Overrides */
-body.light-theme {
-    background-color: #f8fafc;
-    color: #0f172a;
-}
-
-body.light-theme header {
-    background: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-body.light-theme .glassmorphism {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e2e8f0;
-    backdrop-filter: blur(16px);
-}
-
-body.light-theme .glassmorphism-card,
-body.light-theme .bg-slate-900\/60,
-body.light-theme .bg-slate-800\/40 {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
-}
-
-body.light-theme .text-slate-100,
-body.light-theme .text-slate-300,
-body.light-theme .text-white {
-    color: #0f172a !important;
-}
-
-body.light-theme .text-slate-400 {
-    color: #475569 !important;
-}
-
-body.light-theme input,
-body.light-theme textarea,
-body.light-theme select {
-    background-color: #ffffff !important;
-    color: #0f172a !important;
-    border-color: #cbd5e1 !important;
-}
 /* Projects Section Styling */
 .projects-section {
     padding: 5rem 0;
     background-color: #070a12;
     position: relative;
     z-index: 10;
+    transition: background-color 0.4s ease;
 }
 
 .projects-grid {
@@ -342,4 +307,94 @@ body.light-theme select {
     background-color: rgba(37, 99, 235, 0.1);
     color: #93c5fd;
     border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Light Mode Overrides */
+body.light-theme {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+body.light-theme header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+body.light-theme .glassmorphism {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #e2e8f0;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+body.light-theme .glassmorphism-card,
+body.light-theme .bg-slate-900\/60,
+body.light-theme .bg-slate-800\/40 {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .text-slate-100,
+body.light-theme .text-slate-300,
+body.light-theme .text-white {
+    color: #0f172a !important;
+}
+
+body.light-theme .text-slate-400 {
+    color: #475569 !important;
+}
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+body.light-theme .projects-section {
+    background-color: #f1f5f9;
+}
+
+body.light-theme .project-card {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-theme .project-title {
+    color: #0f172a;
+}
+
+body.light-theme .project-desc {
+    color: #475569;
+}
+
+body.light-theme .tag {
+    background-color: rgba(37, 99, 235, 0.08);
+    color: #1d4ed8;
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ==========================================================================
+   SMOOTH SCROLLING & MOBILE TOUCH FIX
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px; /* Fixed Navbar-এর নিচে কন্টেন্ট যেন ঢেকে না যায় */
+}
+
+a, button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
