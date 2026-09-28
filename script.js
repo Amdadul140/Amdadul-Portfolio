@@ -403,3 +403,29 @@ function toggleTheme() {
 
 if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
 if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener('click', toggleTheme);
+// Footer Dynamic Year
+const footerYearEl = document.getElementById('current-year-footer');
+if (footerYearEl) {
+    footerYearEl.textContent = new Date().getFullYear();
+}
+
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('back-to-top-btn');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            backToTopBtn.classList.add('opacity-100');
+        } else {
+            backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            backToTopBtn.classList.remove('opacity-100');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
