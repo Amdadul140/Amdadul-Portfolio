@@ -77,4 +77,5 @@ Email: mdamdadulislam140@gmail.com
 Phone: 01537586283
 
 Purpose
-This portfolio is part of my ongoing journey to develop practical skills, showcase my academic projects, present my technical experience, and transition into a professional Network Engineer and Web Developer role.
+This portfolio is part of my ongoing journey to develop practical skills, showcase my academic projects,
+present my technical experience, and transition into a professional Network Engineer and Web Developer role.
