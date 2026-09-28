@@ -7,7 +7,7 @@ This project showcases my technical skills, academic background, projects, certi
 
 Live Portfolio
 
-Visit My Live Portfolio:["([https://pen-academy.vercel.app](https://amdadul-portfolio-pnyl.vercel.app/))"](https://amdadul140.github.io/Amdadul-Portfolio/)
+Visit My Live Portfolio:(https://amdadul140.github.io/Amdadul-Portfolio/)
 
 ---
 
